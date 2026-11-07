@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مرجع آموزشی قطعات کامپیوتر</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+    <!-- منوی همبرگری -->
+    <nav class="navbar">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <span></span><span></span><span></span><span></span>
+        </div>
+        <div id="sideMenu" class="side-menu">
+            <ul>
+                <li><a href="#">پشتیبانی</a></li>
+                <li><a href="#">پنل ادمین</a></li>
+                <li><a href="#" onclick="toggleMenu()">بستن منو</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <h1>آموزش قطعات کامپیوتر</h1>
+        <p>دنیای سخت‌افزار و نرم‌افزار در دستان شما</p>
+    </header>
+
+    <main class="container">
+        <!-- بخش سخت‌افزار - گسترش یافته -->
+        <section class="category-section">
+            <h2 class="section-title">سخت‌افزار (Hardware)</h2>
+            <div class="grid">
+                <div class="part-card" onclick="openModal('مادربرد', 'مادربرد قلب سیستم شماست که تمام قطعات را به هم متصل می‌کند.', 'https://fa.wikipedia.org/wiki/مادربرد')">
+                    <h3>مادربرد</h3><p>اتصال قطعات</p>
+                </div>
+                <div class="part-card" onclick="openModal('پردازنده', 'واحد پردازش مرکزی یا CPU، مغز کامپیوتر است.', 'https://fa.wikipedia.org/wiki/واحد_پردازش_مرکزی')">
+                    <h3>پردازنده (CPU)</h3><p>مغز سیستم</p>
+                </div>
+                <div class="part-card" onclick="openModal('رم', 'حافظه‌ای موقت و بسیار سریع برای اجرای برنامه‌ها.', 'https://fa.wikipedia.org/wiki/حافظه_دسترسی_تصادفی')">
+                    <h3>حافظه RAM</h3><p>سرعت اجرای برنامه‌ها</p>
+                </div>
+                <div class="part-card" onclick="openModal('کارت گرافیک', 'وظیفه پردازش تصاویر و گرافیک‌های سنگین را دارد.', 'https://fa.wikipedia.org/wiki/واحد_پردازش_گرافیکی')">
+                    <h3>کارت گرافیک (GPU)</h3><p>پردازش تصویر</p>
+                </div>
+                <div class="part-card" onclick="openModal('حافظه SSD/HDD', 'محل ذخیره دائمی اطلاعات و فایل‌های شما.', 'https://fa.wikipedia.org/wiki/حافظه_سخت')">
+                    <h3>حافظه SSD/HDD</h3><p>ذخیره‌سازی دائمی</p>
+                </div>
+                <div class="part-card" onclick="openModal('پاور', 'واحد منبع تغذیه که برق لازم را به قطعات می‌رساند.', 'https://fa.wikipedia.org/wiki/منبع_تغذیه‌')">
+                    <h3>پاور (PSU)</h3><p>تأمین انرژی</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- بخش نرم‌افزار - گسترش یافته -->
+        <section class="category-section">
+            <h2 class="section-title">نرم‌افزار (Software)</h2>
+            <div class="grid">
+                <div class="part-card" onclick="openModal('سیستم عامل', 'نرم‌افزار اصلی که واسط بین کاربر و سخت‌افزار است.', 'https://fa.wikipedia.org/wiki/سیستم‌عامل')">
+                    <h3>سیستم عامل (OS)</h3><p>مدیر اصلی سیستم</p>
+                </div>
+                <div class="part-card" onclick="openModal('درایورها', 'نرم‌افزاری که سخت‌افزار را به سیستم عامل معرفی می‌کند.', 'https://fa.wikipedia.org/wiki/درایور_(کامپیوتر)')">
+                    <h3>درایور (Driver)</h3><p>شناسایی سخت‌افزار</p>
+                </div>
+                <div class="part-card" onclick="openModal('آنتی‌ویروس', 'نرم‌افزاری برای محافظت از امنیت سیستم.', 'https://fa.wikipedia.org/wiki/آنتی‌ویروس')">
+                    <h3>آنتی‌ویروس</h3><p>محافظ امنیت</p>
+                </div>
+                <div class="part-card" onclick="openModal('نرم‌افزارهای کاربردی', 'برنامه‌هایی مثل مرورگر، آفیس و ویرایش ویدیو.', 'https://fa.wikipedia.org/wiki/نرم‌افزار_کاربردی')">
+                    <h3>برنامه‌های کاربردی</h3><p>انجام کارهای روزمره</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- بخش آزمون هوشمند -->
+        <section class="quiz-section">
+            <div class="quiz-container" id="quizBox">
+                <h2 class="section-title">آزمون آموزش قطعات 🎓</h2>
+                <div id="questionContainer">
+                    <p id="questionText" class="question-text">آماده شروع آزمون هستید؟</p>
+                    <div id="optionsContainer" class="options-grid"></div>
+                    <button id="startBtn" class="fancy-link" onclick="startQuiz()">شروع آزمون</button>
+                </div>
+                <div id="resultContainer" class="result-box" style="display: none;"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- مودال -->
+    <div id="partModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            <h3 id="modalTitle">عنوان</h3>
+            <p id="modalDesc">توضیحات</p>
+            <div class="link-container">
+                <a id="partLink" href="#" target="_blank" class="fancy-link">مشاهده آموزش کامل</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
